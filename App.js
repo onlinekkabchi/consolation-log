@@ -1,51 +1,18 @@
-import React from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {StyleSheet, View, Text} from 'react-native';
+import Card from './component/card';
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+export default function App() {
   return (
-    <SafeAreaView style={styles.appContainer}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <View style={styles.whiteBox}>
-        <Text>회의중!</Text>
-      </View>
-    </SafeAreaView>
+    <View style={styles.base}>
+      <Text>리액트 네이티브로 샘플앱만들기_쏘냐</Text>
+      <Card />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  appContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#d9c4ec',
+  base: {
+    backgroundColor: '#c1e3e3',
     height: '100%',
-    width: '100%',
-  },
-  whiteBox: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    width: 250,
-    height: 120,
-    borderRadius: 20,
   },
 });
-
-export default App;
